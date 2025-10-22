@@ -1,0 +1,11 @@
+{
+  "name": "cli-task-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "task-cli" : "index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
