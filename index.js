@@ -11,11 +11,14 @@ const commandArgs = cliArgs.slice(3);
 
 if (command === "add" && validateArgs(command, 1, commandArgs)) {
   controller.addTask(commandArgs);
-} else if (command === "update" && validateArgs(command , 2 , commandArgs)) {
-    controller.updateTask(commandArgs)
-} else if (command === "delete" && validateArgs(command , 1 , commandArgs)) {
-  controller.deleteTask(commandArgs)
-} else if (command === "mark-in-progress" || "mark-done") {
-} else if (command === "list") {
+} else if (command === "update" && validateArgs(command, 2, commandArgs)) {
+  controller.updateTask(commandArgs);
+} else if (command === "delete" && validateArgs(command, 1, commandArgs)) {
+  controller.deleteTask(commandArgs);
+} else if ((command === "mark-in-progress" || command === 'mark-done') && validateArgs(command , 1 , commandArgs)) {
+  controller.markTask(command , commandArgs)
+}else if (command === "list") {
+  // waiting
 } else {
+  // waiting
 }

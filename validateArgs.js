@@ -13,7 +13,8 @@ const validateArgs = (command, argCount, commandArgs) => {
       case "delete":
         message = `The "delete" command accepts one argument (the id). Example:  delete 1234 `;
         break;
-      case "mark-in-progress" || "mark-done":
+      case "mark-in-progress":
+      case "mark-done":
         message = `The "mark" command accepts one argument (the id). Example:  mark-in-progress 1234 or mark-done 1234 `;
         break;
     }

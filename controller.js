@@ -11,7 +11,7 @@ const addTask = async (args) => {
     description,
     status: "todo",
     createdAt: new Date(),
-    updatedAt: this.createdAt,
+    updatedAt: new Date(),
   };
 
   const isExistDb = fs.existsSync(tasksDb);
@@ -97,8 +97,40 @@ const deleteTask = async (args) => {
   }
 };
 
+const markTask = async (command, args) => {
+  const id = parseInt(args[0]);
+  try {
+    const data = await fs.promises.readFile(tasksDb, "utf8");
+    let tasks = data ? JSON.parse(data) : [];
+
+    const taskIndex = tasks.findIndex((t) => t.id === id);
+    if (taskIndex === -1) {
+      const newError = new AppError(
+        "[ Not found ]",
+        "Task with the given ID not found"
+      );
+      return newError.log();
+    }
+
+    let task = tasks[taskIndex];
+    const updatedTask = {
+      ...task,
+      status: command === "mark-in-progress" ? "in-progress" : "done",
+    };
+
+    const updatedTasks = tasks.map((t) => (t.id === id ? updatedTask : t));
+
+    await fs.promises.writeFile(tasksDb, JSON.stringify(updatedTasks, null, 2));
+    console.log(`Task updated successfully (ID: ${task.id})`);
+  } catch (error) {
+    const newError = new AppError("[ Internal error ]", error.message);
+    newError.log();
+  }
+};
+
 module.exports = {
   addTask,
   updateTask,
   deleteTask,
+  markTask,
 };
