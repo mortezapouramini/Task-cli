@@ -1,50 +1,68 @@
-# TASK TRACKER CLI APP
+# 🧭 Task Tracker CLI App
 
-Sample solution for the [task-tracker](https://roadmap.sh/projects/task-tracker) challenge from [roadmap.sh](https://roadmap.sh/).
-
----
-
-## Built with
-
-- Node.js
+Sample solution for the [Task Tracker](https://roadmap.sh/projects/task-tracker) challenge from [roadmap.sh](https://roadmap.sh/).
 
 ---
 
-## Features
+## 🚀 Built With
 
-- Task management (CRUD operations)
+- **Node.js**
 
 ---
 
-## Prerequisites
+## ✨ Features
+
+- Manage tasks with full **CRUD** operations:
+  - Add new tasks  
+  - Update existing tasks  
+  - Delete tasks  
+  - Mark tasks as done or in progress  
+  - List tasks by their status  
+
+---
+
+## 🧩 Prerequisites
 
 Before running the project, make sure you have installed:
 
-- **Node.js** >= 18.x → [Download](https://nodejs.org/en/)
+- **Node.js** ≥ 18.x → [Download here](https://nodejs.org/en/)
 
 ---
 
-
-## Installation & Usage
+## ⚙️ Installation & Usage
 
 ```bash
-# 1. Clone and install dependencies
+# 1️⃣ Clone the repository
 git clone https://github.com/mortezapouramini/Task-cli.git
+
+# 2️⃣ Move into the project folder
 cd Task-cli
-npm install
 
-# 2. How to use
+# 3️⃣ Usage examples:
 
-open terminal and write following commands for:
-    add task  => task-cli add 'task name'
-    update task  => task-cli update 'task id' 'new value'
-    delete task  => task-cli delete 'task id'
-    mark task  => task-cli mark-done 'task id'
-    mark task  => task-cli mark-in-progress 'task id'
-    listing tasks => task-cli list
-    listing tasks => task-cli list done
-    listing tasks => task-cli list todo
-    listing tasks => task-cli list in-progress
+# Add a task
+task-cli add "Buy groceries"
 
+# Update a task
+task-cli update 1 "Buy groceries and cook dinner"
 
-```
+# Delete a task
+task-cli delete 2
+
+# Mark as done
+task-cli mark-done 3
+
+# Mark as in progress
+task-cli mark-in-progress 4
+
+# List all tasks
+task-cli list
+
+# List only completed tasks
+task-cli list done
+
+# List only to-do tasks
+task-cli list todo
+
+# List tasks currently in progress
+task-cli list in-progress
