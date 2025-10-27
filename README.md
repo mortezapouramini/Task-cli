@@ -35,7 +35,7 @@ npm install
 
 # 2. How to use
 
-open terminal and write following commands:
+open terminal and write following commands for:
     add task  => task-cli add 'task name'
     update task  => task-cli update 'task id' 'new value'
     delete task  => task-cli delete 'task id'
