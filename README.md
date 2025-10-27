@@ -36,11 +36,11 @@ npm install
 # 2. How to use
 
 open terminal and write following commands:
-    add task  => task-cli add (task name)
-    update task  => task-cli update (task id) (new value)
-    delete task  => task-cli delete (task id)
-    mark task  => task-cli mark-done (task id)
-    mark task  => task-cli mark-in-progress (task id)
+    add task  => task-cli add 'task name'
+    update task  => task-cli update 'task id' 'new value'
+    delete task  => task-cli delete 'task id'
+    mark task  => task-cli mark-done 'task id'
+    mark task  => task-cli mark-in-progress 'task id'
     listing tasks => task-cli list
     listing tasks => task-cli list done
     listing tasks => task-cli list todo
