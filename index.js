@@ -3,7 +3,7 @@
 // Imports
 const Validation = require("./validation");
 const controller = require("./controller");
-const AppError = require("./errors");
+const AppError = require("./errorHandler");
 const { errors } = require("./cliErrors");
 
 // Get cli arguments

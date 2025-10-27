@@ -1,4 +1,4 @@
-const AppError = require("./errors");
+const AppError = require("./errorHandler");
 const { errors } = require("./cliErrors");
 
 class Validation {

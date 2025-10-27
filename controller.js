@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const AppError = require("./errors");
+const AppError = require("./errorHandler");
 
 const tasksDb = path.join(__dirname, "tasks.json");
 
@@ -128,9 +128,31 @@ const markTask = async (command, args) => {
   }
 };
 
+const listingTasks = async (args) => {
+  const arg = args[0] || undefined;
+
+  const data = await fs.promises.readFile(tasksDb, "utf8");
+  const tasks = data ? JSON.parse(data) : [];
+
+  let filteredTasks;
+  if (arg) {
+    filteredTasks = tasks.filter((t) => t.status === arg);
+  } else {
+    filteredTasks = tasks;
+  }
+  console.log(
+    `Tasks recived successfully (tasks : ${JSON.stringify(
+      filteredTasks,
+      null,
+      2
+    )})`
+  );
+};
+
 module.exports = {
   addTask,
   updateTask,
   deleteTask,
   markTask,
+  listingTasks,
 };
