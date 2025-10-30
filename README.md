@@ -38,6 +38,9 @@ git clone https://github.com/mortezapouramini/Task-cli.git
 # 2️⃣ Move into the project folder
 cd Task-cli
 
+# 3️⃣ Run this command in terminal to add package to npm
+npm link
+
 # 3️⃣ Usage examples:
 
 # Add a task
